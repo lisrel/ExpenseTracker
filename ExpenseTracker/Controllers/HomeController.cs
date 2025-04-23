@@ -24,6 +24,8 @@ namespace ExpenseTracker.Controllers
         public IActionResult Expenses()
         {
             var allExpenses = _context.Expenses.ToList();
+            ViewBag.ExpensesCount = allExpenses.Count();
+            ViewBag.TotalExpenses = allExpenses.Sum(z => z.Value);
             return View(allExpenses);
         }
 

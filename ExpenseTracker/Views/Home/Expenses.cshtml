@@ -5,8 +5,24 @@
 @model List<Expense>
 
 
-<div class="text-center">
-    <h1 class="display-4">Expenses</h1>
+<div>
+    <div class="text-center">
+        <h1 class="display-4">Expenses</h1>
+
+    </div>
+
+    <div class="text-end float-end">
+        <a class="btn btn-primary" asp-action="CreateEditExpense">Add New</a>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <h3 class="float-start col-sm-6">Total Expenses: $@ViewBag.TotalExpenses</h3>
+
+        <h3 class="float-end text-end col-sm-6">@ViewBag.ExpensesCount found</h3>
+
+    </div>
 
     <table class="table  tabble-striped">
         <thead>
